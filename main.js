@@ -54,6 +54,7 @@ function draw() {
   else if (currentScreen === "win") drawWin();
   else if (currentScreen === "lose") drawLose();
   else if (currentScreen === "leap") drawLeap();
+  else if (currentScreen === "cool") drawCool();
 
   // (Optional teaching note)
   // This “if/else chain” is a very common early approach.
@@ -82,6 +83,7 @@ function mousePressed() {
   else if (currentScreen === "win") winMousePressed?.();
   else if (currentScreen === "lose") loseMousePressed?.();
   else if (currentScreen === "leap") leapMousePressed?.();
+  else if (currentScreen === "cool") coolMousePressed?.();
 }
 
 // ------------------------------
@@ -102,6 +104,7 @@ function keyPressed() {
   else if (currentScreen === "win") winKeyPressed?.();
   else if (currentScreen === "lose") loseKeyPressed?.();
   else if (currentScreen === "leap") leapKeyPressed?.();
+  else if (currentScreen === "cool") coolKeyPressed?.();
 }
 
 // ------------------------------------------------------------

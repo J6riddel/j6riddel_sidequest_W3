@@ -1,25 +1,29 @@
 
 
-function drawLeap() {
-  image(canyon, 0, 0, width, height);
+function drawCool() {
+  // Green-tinted background to communicate success
+  image(beach, 0, 0, width, height);
+  image(shark, 200, 400, 400, 300);
+  image(pib, 500, 450, 100, 100);
 
-  fill(0);
+
+  fill(255, 0, 0);
   textAlign(CENTER, CENTER);
 
   // Main success message
   textSize(40);
-  text("You Made It!", width / 2, 300);
+  text("Your dinner!", width / 2, 300);
 
   // Instruction text
   textSize(20);
-  text("Pib's tired, lets go back home...", width / 2, 360);
+  text("rip Pib, TRY AGAIN", width / 2, 360);
 }
 
 // ------------------------------------------------------------
 // Mouse input for win screen
 // ------------------------------------------------------------
 // Any mouse click returns the player to the start screen
-function leapMousePressed() {
+function coolMousePressed() {
   currentScreen = "start";
 }
 
@@ -27,7 +31,7 @@ function leapMousePressed() {
 // Keyboard input for win screen
 // ------------------------------------------------------------
 // R is commonly used for “restart” in games
-function leapKeyPressed() {
+function coolKeyPressed() {
   if (key === "r" || key === "R") {
     currentScreen = "start";
   }
