@@ -4,8 +4,7 @@
 // 1) drawGame() → what the game screen looks like
 // 2) input handlers → what happens when the player clicks or presses keys
 // 3) helper functions specific to this screen
-
-// ------------------------------
+// ------------------------- 
 // Button data
 // ------------------------------
 // This object stores all the information needed to draw
@@ -17,7 +16,15 @@ const gameBtn = {
   y: 550, // y position (centre of the button)
   w: 260, // width
   h: 90, // height
-  label: "PRESS HERE", // text shown on the button
+  label: "LEFT", // text shown on the button
+};
+
+const gameBtn2 = {
+  x: 400, // x position (centre of the button)
+  y: 450, // y position (centre of the button)
+  w: 260, // width
+  h: 90, // height
+  label: "RIGHT", // text shown on the button
 };
 
 // ------------------------------
@@ -28,16 +35,19 @@ const gameBtn = {
 function drawGame() {
   // Set background colour for the game screen
   background(240, 230, 140);
+  image(splitimg, 0, 0, width, height);
+  image(pib, 130, 115, 200, 200);
+  image(pib, 530, 115, 200, 200);
 
   // ---- Title and instructions text ----
-  fill(0); // black text
+  fill(255, 0, 0); // black text
   textSize(32);
   textAlign(CENTER, CENTER);
-  text("Game Screen", width / 2, 160);
+  text("Left or Right", width / 2, 160);
 
   textSize(18);
   text(
-    "Click the button (or press ENTER) for a random result.",
+    "(Choose correctly)",
     width / 2,
     210,
   );
@@ -45,6 +55,7 @@ function drawGame() {
   // ---- Draw the button ----
   // We pass the button object to a helper function
   drawGameButton(gameBtn);
+  drawGameButton(gameBtn2);
 
   // ---- Cursor feedback ----
   // If the mouse is over the button, show a hand cursor
@@ -92,7 +103,11 @@ function drawGameButton({ x, y, w, h, label }) {
 function gameMousePressed() {
   // Only trigger the outcome if the button is clicked
   if (isHover(gameBtn)) {
-    triggerRandomOutcome();
+    currentScreen = "win";
+    
+  }
+  if (isHover(gameBtn2)) {
+    currentScreen = "lose";
   }
 }
 

@@ -5,6 +5,18 @@
 // 2) input handlers → what happens on click / key press on this screen
 // 3) a helper function to draw menu buttons
 
+let subimg;
+let splitimg;
+let pib;
+let jump;
+
+function preload() {
+  subimg = loadImage('Images/Suburban-Neighborhoods.jpg');
+  splitimg = loadImage('Images/split img.jpg');
+  pib = loadImage('Images/Pib.webp');
+  jump = loadImage('Images/grand-canyon.webp');
+
+}
 // ------------------------------------------------------------
 // Start screen visuals
 // ------------------------------------------------------------
@@ -12,13 +24,14 @@
 // currentScreen === "start"
 function drawStart() {
   // Background colour for the start screen
-  background(180, 225, 220); // soft teal background
+  image(subimg, 0, 0, width, height);
+  image(pib, 150, 515, 200, 200);
 
   // ---- Title text ----
-  fill(30, 50, 60);
+  fill(250, 0, 0);
   textSize(46);
   textAlign(CENTER, CENTER);
-  text("Win or Lose", width / 2, 180);
+  text("Dog Walking Simulator", width / 2, 180);
 
   // ---- Buttons (data only) ----
   // These objects store the position/size/label for each button.
@@ -42,7 +55,7 @@ function drawStart() {
 
   // Draw both buttons
   drawButton(startBtn);
-  drawButton(instrBtn);
+  //drawButton(instrBtn);
 
   // ---- Cursor feedback ----
   // If the mouse is over either button, show a hand cursor
@@ -64,10 +77,7 @@ function startMousePressed() {
   if (isHover(startBtn)) {
     currentScreen = "game";
   }
-  // If INSTRUCTIONS is clicked, go to the instructions screen
-  else if (isHover(instrBtn)) {
-    currentScreen = "instr";
-  }
+
 }
 
 // ------------------------------------------------------------
@@ -110,17 +120,17 @@ function drawButton({ x, y, w, h, label }) {
   // We also add a shadow using drawingContext (p5 lets you access the
   // underlying canvas context for effects like shadows).
   if (hover) {
-    fill(255, 200, 150, 220); // warm coral on hover
+    fill(255, 110, 210, 220); // warm coral on hover
 
     // Shadow settings (only when hovered)
     drawingContext.shadowBlur = 20;
-    drawingContext.shadowColor = color(255, 180, 120);
+    drawingContext.shadowColor = color(255, 110, 210);
   } else {
-    fill(255, 240, 210, 210); // soft cream base
+    fill(255, 110, 210); // soft cream base
 
     // Softer shadow when not hovered
     drawingContext.shadowBlur = 8;
-    drawingContext.shadowColor = color(220, 220, 220);
+    drawingContext.shadowColor = color(225, 110, 210);
   }
 
   // Draw the rounded rectangle button
