@@ -2,8 +2,10 @@
 
 function drawLeap() {
   image(canyon, 0, 0, width, height);
+  image(pib, 400, 170, 150, 250);
+  image(pib, 180, 170, 150, 250);
 
-  fill(0);
+  fill(50, 50, 200);
   textAlign(CENTER, CENTER);
 
   // Main success message

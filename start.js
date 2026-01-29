@@ -20,7 +20,7 @@ function preload() {
   jump = loadImage('Images/grand-canyon.webp');
   beach = loadImage('Images/beach.avif');
   shark = loadImage('Images/shark.png');
-  canyon = loadImage('river_float.jpg');
+  canyon = loadImage('Images/river float.jpg');
 
 }
 // ------------------------------------------------------------
