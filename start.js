@@ -16,7 +16,7 @@ let canyon;
 function preload() {
   subimg = loadImage('Images/Suburban-Neighborhoods.jpg');
   splitimg = loadImage('Images/split img.jpg');
-  pib = loadImage('Images/Pib.webp');
+  pib = loadImage('Images/pib.webp');
   jump = loadImage('Images/grand-canyon.webp');
   beach = loadImage('Images/beach.avif');
   shark = loadImage('Images/shark.png');
